@@ -1,5 +1,6 @@
 const express = require('express');
-const { createServer } = require('http')
+const { createServer } = require('http');
+const path = require('path');
 const { Server } = require('socket.io')
 
 const app = express();
@@ -12,7 +13,9 @@ const PORT = 3000;
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'));
-app.use(express.static('node_modules/pixi.js/dist'));
+app.use(express.static('src'));
+app.use(express.static(__dirname + '/node_modules/socket.io-client/dist/'));
+app.use('/pixi.js', express.static(__dirname + '/node_modules/pixi.js/dist/pixi.min.mjs'));
 
 //
 
@@ -21,7 +24,6 @@ server.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`) )
 //
 
 app.get('/', (req, res) => res.render('index') );
-app.get('/pixi.min.mjs', (req, res) => res.sendFile(__dirname + '/node_modules/pixi.js/dist/pixi.min.mjs') );
 
 //
 
