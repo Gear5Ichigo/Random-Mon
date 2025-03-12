@@ -4,15 +4,17 @@
     "@pixi/ui": "^2.2.2",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
+    "nodemon": "^3.1.9",
     "pixi.js": "^8.8.1",
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "esbuild": "0.25.1"
   },
   "scripts": {
-      "build": "esbuild server.js --platform=node --bundle --minify --outfile=build/out.js",
-      "dev": "nodemon server.js"
+    "build": "esbuild src/* --bundle --minify --sourcemap --outdir=dist",
+    "dev": "concurrently \" esbuild src/* --bundle --minify --sourcemap --outdir=dist --watch \" \" nodemon server.js\""
   }
 }

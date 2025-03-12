@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/game.js"],
+  "sourcesContent": ["export default class Game {\r\n    init() {\r\n        console.log('the game has started');\r\n    }\r\n}"],
+  "mappings": "MAAA,IAAqBA,EAArB,KAA0B,CACtB,MAAO,CACH,QAAQ,IAAI,sBAAsB,CACtC,CACJ",
+  "names": ["Game"]
+}

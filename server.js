@@ -13,7 +13,7 @@ const PORT = 3000;
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'));
-app.use(express.static('src'));
+app.use(express.static('dist'));
 app.use(express.static(__dirname + '/node_modules/socket.io-client/dist/'));
 app.use('/pixi.js', express.static(__dirname + '/node_modules/pixi.js/dist/pixi.min.mjs'));
 
