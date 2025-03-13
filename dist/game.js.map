@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["../src/game.js"],
-  "sourcesContent": ["export default class Game {\r\n    init() {\r\n        console.log('the game has started');\r\n    }\r\n}"],
-  "mappings": "MAAA,IAAqBA,EAArB,KAA0B,CACtB,MAAO,CACH,QAAQ,IAAI,sBAAsB,CACtC,CACJ",
-  "names": ["Game"]
+  "sourcesContent": ["export default class Game {\r\n    async init() {\r\n        console.log('the game has started');\r\n    }\r\n\r\n    updateLoop(ticker) {\r\n\r\n    }\r\n}"],
+  "mappings": "MAAA,IAAqBA,EAArB,KAA0B,CACtB,MAAM,MAAO,CACT,QAAQ,IAAI,sBAAsB,CACtC,CAEA,WAAWC,EAAQ,CAEnB,CACJ",
+  "names": ["Game", "ticker"]
 }

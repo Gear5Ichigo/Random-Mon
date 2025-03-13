@@ -1,5 +1,9 @@
 export default class Game {
-    init() {
+    async init() {
         console.log('the game has started');
+    }
+
+    updateLoop(ticker) {
+
     }
 }

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/mainmenu.js"],
+  "sourcesContent": ["export default class MainMenu {\r\n    \r\n}"],
+  "mappings": "MAAA,IAAqBA,EAArB,KAA8B,CAE9B",
+  "names": ["MainMenu"]
+}

@@ -1,5 +1,6 @@
 import { Application } from "pixi.js";
 import Game from "./game";
+import socket from "./socket";
 
 (async () => {
 
@@ -12,7 +13,7 @@ import Game from "./game";
     console.log(Game)
 
     app.ticker.add(ticker => {
-
+        
     });
 
 })();
