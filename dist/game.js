@@ -1,2 +1,2 @@
-(()=>{var t=class{async init(){console.log("the game has started")}updateLoop(a){}};})();
+(()=>{var t=class{static async init(){console.log("the game has started")}static updateLoop(s){}};})();
 //# sourceMappingURL=game.js.map
