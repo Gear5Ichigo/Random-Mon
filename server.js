@@ -35,6 +35,27 @@ app.get('/', (req, res) => res.render('index') );
 
 //
 
+const players = []
+
 io.on('connection', socket => {
+    const player = {
+        name: 'RandomMon Guest',
+        socket_id: socket.id
+    };
+    io.to(socket.id).emit('name change',player);
+
+    players.push(player);
     socket.emit('init join', socket.id);
+    console.log(players);
+
+    socket.on('name change', name => {
+        player.name = name;
+        io.to(socket.id).emit('name change', player);
+    })
+
+    socket.on('disconnect', () => {
+        players.splice(players.indexOf(player), 1);
+        console.log(players);
+    })
+
 });

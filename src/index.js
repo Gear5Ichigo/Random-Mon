@@ -1,6 +1,8 @@
 import { Application } from "pixi.js";
 import GameAssets from "./assets";
 import root from "./rootcontainer";
+import MainMenu from "./mainmenu";
+import socket from "./socket";
 
 (async () => {
 
@@ -13,16 +15,25 @@ import root from "./rootcontainer";
     //
 
     await GameAssets.init(); // loads all assets
+    await MainMenu.init();
+
+    await socket()
 
     console.log(root);
     app.stage.addChild(root);
 
     //
 
-    app.ticker.add(ticker => {
-        
-    });
 
-    return app;
+    window.onresize = () => {
+        app.stage.scale.set(innerWidth/root.nativeRes.width, innerHeight/root.nativeRes.height);
+    }
+    window.onresize();
+
+    //
+
+    app.ticker.add(ticker => {
+        root.children.forEach(ch => ch.updateLoop(ticker))
+    });
 
 })();
